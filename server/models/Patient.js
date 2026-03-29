@@ -14,6 +14,7 @@ const patientSchema = new mongoose.Schema({
     type: String,
     enum: ['Male', 'Female', 'Other'],
     required: true
+    
   },
   phone: {
     type: String,

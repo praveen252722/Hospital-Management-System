@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import HospitalDashboard from "./hospital-website";
 
 export default function Home() {
-  redirect("/dashboard");
+  return <HospitalDashboard />;
 }

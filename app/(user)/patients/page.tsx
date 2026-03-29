@@ -140,14 +140,15 @@ export default function PatientsPage() {
       disease: formData.disease || undefined,
     };
 
-    try {
+    try { 
       if (editingPatient) {
         await fetchAPI(`/patients/${editingPatient._id}`, {
           method: "PUT",
           body: JSON.stringify(payload),
         });
-        toast.success("Patient updated successfully");
-      } else {
+        toast.success("Patient updated successfully");    
+      }
+      else {
         await fetchAPI("/patients", {
           method: "POST",
           body: JSON.stringify(payload),
@@ -157,11 +158,11 @@ export default function PatientsPage() {
       setIsDialogOpen(false);
       loadPatients();
     } catch (error) {
-      toast.error(editingPatient ? "Failed to update patient" : "Failed to add patient");
+      toast.error("Failed to save patient");
     } finally {
       setSubmitting(false);
     }
-  }
+  } 
 
   async function handleDelete() {
     if (!deletingPatient) return;
